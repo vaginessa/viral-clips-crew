@@ -150,6 +150,8 @@ def main():
             # Download video from YouTube
             url = input("Enter the YouTube URL: ")
             get_video_from_youtube_url(url, input_folder)
+            transcript = None
+            subtitles = None
             transcribe_flag = False
             break
         elif choice == '2':
@@ -171,7 +173,7 @@ def main():
         logging.error(f"Error creating directories: {e}")
         return
 
-    process_videos(input_folder, output_video_folder, crew_output_folder, transcribe_flag=transcribe_flag)
+    process_videos(input_folder, output_video_folder, crew_output_folder, transcript, subtitles, transcribe_flag)
 
 
 if __name__ == "__main__":
